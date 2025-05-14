@@ -1,0 +1,143 @@
+.flash-banner {
+  width: 100%;
+  height: 60vh; 
+  background-image: url('https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/323854997/original/1c56e5d8111a28dbb4ee384096fa3863f1111fbd/create-a-captivating-hero-image-and-banner-image-for-your-eccomerce-websites.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px; 
+  transition: transform 0.5s ease-in-out; 
+}
+
+.flash-banner:hover {
+  transform: scale(1.05) rotateY(10deg) rotateX(5deg); 
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(20, 20, 20, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  flex-direction: column;
+  text-align: center;
+  transform: translateZ(0);
+  animation: slideIn 1s ease-out; 
+}
+
+.left-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.title {
+  font-size: 64px;
+  font-weight: 300;
+  margin: 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6); /* Larger shadow for more pop */
+}
+
+.subtitle {
+  font-size: 80px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 2px;
+  text-shadow: 5px 5px 12px rgba(0, 0, 0, 0.6); 
+  transform: scale(1.1); 
+}
+
+.description {
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #f0f0f0;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.right-content {
+  flex: 1;
+  position: relative;
+  max-width: 400px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tag {
+  background: #ffb700;
+  color: black;
+  font-weight: bold;
+  padding: 18px 28px;
+  font-size: 24px;
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); 
+  transform: rotate(-10deg) translateZ(10px);
+  animation: tagBounce 1s ease-in-out infinite alternate;
+}
+
+@keyframes tagBounce {
+  0% {
+    transform: rotate(-10deg) translateY(0) translateZ(10px);
+  }
+  100% {
+    transform: rotate(-10deg) translateY(-10px) translateZ(10px);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 48px;
+  }
+
+  .subtitle {
+    font-size: 60px;
+  }
+
+  .tag {
+    font-size: 18px;
+    padding: 10px 20px;
+    position: static;
+    transform: rotate(0deg) translateY(0);
+  }
+
+  .description {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,30 @@
+.ecommerce-logo {
+  height: 36px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .ecommerce-logo {
+    height: 34px;
+    max-width: 170px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ecommerce-logo {
+    height: 32px;
+    max-width: 150px;
+  }
+}
+
+.ecommerce-logo:hover {
+  transform: scale(1.05);
+}
+
+.ecommerce-brand {
+  display: flex;
+  align-items: center;
+}

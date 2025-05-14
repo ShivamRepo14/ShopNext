@@ -1,0 +1,213 @@
+.register-3d-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  perspective: 1000px;
+}
+
+.register-3d-card {
+  width: 100%;
+  max-width: 420px;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+
+.register-3d-card:hover {
+  transform: rotateY(5deg) rotateX(5deg);
+}
+
+.register-3d-card-inner {
+  position: relative;
+  width: 100%;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2),
+              0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+              0 30px 50px rgba(0, 0, 0, 0.3);
+  transform: translateZ(20px);
+  transition: all 0.5s ease;
+  backface-visibility: hidden;
+}
+
+.register-3d-title {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #333;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.register-3d-title:after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  margin: 15px auto;
+  border-radius: 3px;
+}
+
+.register-3d-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.register-3d-input-group {
+  position: relative;
+}
+
+.register-3d-input {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.register-3d-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.register-3d-label {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  color: #666;
+  font-size: 16px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0 5px;
+}
+
+.register-3d-input:focus + .register-3d-label,
+.register-3d-input:not(:placeholder-shown) + .register-3d-label {
+  top: -10px;
+  left: 15px;
+  font-size: 12px;
+  color: #667eea;
+  background: white;
+}
+
+.register-3d-focus-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  z-index: -1;
+  border-radius: 8px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.register-3d-input:focus ~ .register-3d-focus-bg {
+  opacity: 1;
+}
+
+.register-3d-button {
+  position: relative;
+  padding: 15px 30px;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin-top: 10px;
+}
+
+.register-3d-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.register-3d-button:active {
+  transform: translateY(0);
+}
+
+.register-3d-button-effect {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transform: translateX(-100%) skewX(-20deg);
+  transition: all 0.6s ease;
+}
+
+.register-3d-button:hover .register-3d-button-effect {
+  transform: translateX(100%) skewX(-20deg);
+}
+
+.register-3d-login-link {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+
+.register-3d-login-link span {
+  color: #667eea;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.register-3d-login-link span:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .register-3d-container {
+    padding: 15px;
+  }
+  
+  .register-3d-card-inner {
+    padding: 30px 20px;
+  }
+  
+  .register-3d-title {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+  
+  .register-3d-input {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+  
+  .register-3d-label {
+    font-size: 14px;
+    top: 12px;
+    left: 15px;
+  }
+  
+  .register-3d-input:focus + .register-3d-label,
+  .register-3d-input:not(:placeholder-shown) + .register-3d-label {
+    font-size: 11px;
+    top: -8px;
+  }
+  
+  .register-3d-button {
+    padding: 12px 25px;
+    font-size: 15px;
+  }
+}

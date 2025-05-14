@@ -1,0 +1,139 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  padding: 20px;
+}
+
+.auth-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 30px 25px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  animation: floatIn 0.8s ease forwards;
+}
+
+@keyframes floatIn {
+  0% {
+    transform: perspective(1000px) translateY(-40px) rotateX(10deg);
+    opacity: 0;
+  }
+  100% {
+    transform: perspective(1000px) translateY(0) rotateX(0);
+    opacity: 1;
+  }
+}
+
+.auth-card h1 {
+  color: #fff;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: #f0f0f0;
+  font-size: 14px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  backdrop-filter: blur(8px);
+  transition: background-color 0.3s ease;
+}
+
+.form-group input:focus {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.auth-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #00c9ff, #92fe9d);
+  color: #000;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, background 0.3s;
+}
+
+.auth-button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #00b4db, #8ed2ff);
+}
+
+.switch-auth {
+  margin-top: 16px;
+  font-size: 14px;
+  text-align: center;
+  color: #e0e0e0;
+}
+
+.switch-auth a {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 25px 18px;
+  }
+
+  .auth-card h1 {
+    font-size: 22px;
+  }
+
+  .auth-button {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+::placeholder {
+  color: #e0e0e0;
+  opacity: 1; 
+  font-weight: 500;
+}
+
+input::-webkit-input-placeholder {
+  color: #e0e0e0;
+}
+
+input:-moz-placeholder {
+  color: #e0e0e0;
+}
+
+input::-moz-placeholder {
+  color: #e0e0e0;
+}
+
+input:-ms-input-placeholder {
+  color: #e0e0e0;
+}
+
