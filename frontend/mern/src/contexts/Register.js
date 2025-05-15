@@ -22,7 +22,7 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:4000/api/v1/register', user);
+      const response = await axios.post('https://shopnext-gltp.onrender.com/api/v1/register', user);
       if (response.status === 200) {
         dispatch({ type: 'user', payload: true });
         toast.success('Register Success');
