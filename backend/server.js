@@ -7,7 +7,9 @@ const bodyparser = require("body-parser")
 const dbconnection = require("./database")
 app.use(express.json())
 app.use(cors({
-    origin : "http://localhost:3000",
+    origin : ["https://shopnext-gltp.onrender.com/api/v1/register" , "https://shopnext-gltp.onrender.com/api/v1/login", "https://shop-next-8qwr.vercel.app"],
+        
+    
     credentials : true
 }))
 const users = require('./router')
