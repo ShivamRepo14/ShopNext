@@ -21,13 +21,8 @@ const Login = () => {
       return;
     }
 
-    const API = axios.create({
-      baseURL: process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000',
-      withCredentials: true, 
-    });
-
     try {
-      const response = await API.post('/api/v1/login', values);
+      const response = await axios.post('https://shopnext-gltp.onrender.com/api/v1/login', values);
       if (response.status === 200) {
         dispatch({ type: 'user', payload: true });
         toast.success('Login Success');

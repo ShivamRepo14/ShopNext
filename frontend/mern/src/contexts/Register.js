@@ -20,13 +20,9 @@ const Register = () => {
       toast.warn('All fields are required!');
       return;
     }
-    const API = axios.create({
-      baseURL: process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000',
-      withCredentials: true, 
-    });
 
     try {
-      const response = await API.post('/api/v1/register', user);
+      const response = await axios.post('https://shopnext-gltp.onrender.com/api/v1/register', user);
       if (response.status === 200) {
         dispatch({ type: 'user', payload: true });
         toast.success('Register Success');
