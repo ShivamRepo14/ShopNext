@@ -7,9 +7,16 @@ const bodyparser = require("body-parser")
 const dbconnection = require("./database")
 app.use(express.json())
 app.use(cors({
-    origin : "http://localhost:3000",
-    credentials : true
-}))
+  origin: "https://shop-next-sage.vercel.app",
+  credentials: true
+}));
+app.use(cors({
+  origin: "https://shop-next-sage.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true
+}));
+
 const users = require('./router')
 app.use('/api/v1' , users)
 
