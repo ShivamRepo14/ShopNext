@@ -8,7 +8,7 @@ const dbconnection = require("./database");
 
 // ✅ Allow only your frontend domain
 app.use(cors({
-    origin: ["https://shop-next-opal.vercel.app"], // Frontend URL
+    origin: ["https://shop-next-nirm.vercel.app"], // Frontend URL
     credentials: true
 }));
 
