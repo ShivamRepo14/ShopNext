@@ -1,25 +1,27 @@
-const express = require("express")
-const cors = require("cors")
-const app = express()
-const dotenv = require("dotenv")
-dotenv.config({path : "./config.env"})
-const bodyparser = require("body-parser")
-const dbconnection = require("./database")
-app.use(express.json())
+const express = require("express");
+const cors = require("cors");
+const app = express();
+const dotenv = require("dotenv");
+dotenv.config({ path: "./config.env" });
+const bodyparser = require("body-parser");
+const dbconnection = require("./database");
+
+// ✅ Allow only your frontend domain
 app.use(cors({
-    origin : ["https://shopnext-gltp.onrender.com/api/v1/register" , "https://shopnext-gltp.onrender.com/api/v1/login", "https://shop-next-8qwr.vercel.app"],
-        
-    
-    credentials : true
-}))
-const users = require('./router')
-app.use('/api/v1' , users)
+    origin: ["https://shop-next-opal.vercel.app"], // Frontend URL
+    credentials: true
+}));
 
-app.use(bodyparser.json)
+app.use(express.json());
+app.use(bodyparser.json()); // ✅ Fixed: added parentheses
 
-const PORT = process.env.PORT
+// Routes
+const users = require('./router');
+app.use('/api/v1', users);
 
-app.listen(PORT , ()=>{
-    dbconnection()
-    console.log("database connection success")
-})
+const PORT = process.env.PORT;
+
+app.listen(PORT, () => {
+    dbconnection();
+    console.log("database connection success");
+});
