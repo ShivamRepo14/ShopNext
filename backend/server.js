@@ -6,16 +6,14 @@ dotenv.config({ path: "./config.env" });
 const bodyparser = require("body-parser");
 const dbconnection = require("./database");
 
-// ✅ Allow only your frontend domain
 app.use(cors({
-    origin: ["https://shop-next-nirm.vercel.app"], // Frontend URL
+    origin: ["https://shop-next-nirm.vercel.app"], 
     credentials: true
 }));
 
 app.use(express.json());
-app.use(bodyparser.json()); // ✅ Fixed: added parentheses
+app.use(bodyparser.json()); 
 
-// Routes
 const users = require('./router');
 app.use('/api/v1', users);
 
